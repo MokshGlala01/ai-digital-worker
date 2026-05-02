@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Task Automation Agent (Digital Worker)
 
 A production-style AI SaaS demo with separate frontend and backend folders.
@@ -51,3 +52,6 @@ OPENAI_MODEL=gpt-4o-mini
 ```
 
 Without an API key, the app uses a deterministic mock agent that simulates email, calendar, data, workflow, audit, and final response steps.
+=======
+# AI-digital-worker
+>>>>>>> 834afe4cf9dc4e46cf837362ba3702bb725e9e78
