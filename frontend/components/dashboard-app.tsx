@@ -55,7 +55,7 @@ type RunRecord = {
   mode: "openai" | "mock";
 };
 
-const agentApiUrl = process.env.NEXT_PUBLIC_AGENT_API_URL ?? "http://localhost:4000/api/agent";
+const agentApiUrl = "/api/agent";
 
 const navItems: Array<{ key: ViewKey; label: string; icon: LucideIcon }> = [
   { key: "workspace", label: "Workspace", icon: LayoutDashboard },

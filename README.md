@@ -1,16 +1,20 @@
-<<<<<<< HEAD
 # AI Task Automation Agent (Digital Worker)
 
-A production-style AI SaaS demo with separate frontend and backend folders.
+A production-style AI SaaS app built with Next.js 14 App Router. The frontend and backend both live in the Next.js app.
 
-## Folder structure
+## Structure
 
 ```text
-frontend/   Next.js 14 App Router UI
-backend/    Express REST API and agent logic
+frontend/
+  app/              Pages and Next.js API routes
+  app/api/agent/    Backend endpoint
+  components/       UI components
+  lib/agent.ts      AI agent abstraction and mock fallback
 ```
 
-## Run locally
+The older `backend/` Express folder is no longer required to run the website.
+
+## Run Locally
 
 ```bash
 npm install
@@ -19,12 +23,9 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-The frontend runs on `http://localhost:3000`.
-The backend runs on `http://localhost:4000`.
-
 ## API
 
-`POST http://localhost:4000/api/agent`
+`POST http://localhost:3000/api/agent`
 
 ```json
 {
@@ -42,16 +43,13 @@ Response:
 }
 ```
 
-## Optional OpenAI setup
+## Optional OpenAI Setup
 
-Create `backend/.env`:
+Create `frontend/.env.local`:
 
 ```bash
 OPENAI_API_KEY=your_api_key_here
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-Without an API key, the app uses a deterministic mock agent that simulates email, calendar, data, workflow, audit, and final response steps.
-=======
-# AI-digital-worker
->>>>>>> 834afe4cf9dc4e46cf837362ba3702bb725e9e78
+Without an API key, the app uses a deterministic mock agent.
