@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: 248 250 252;
+  --foreground: 8 17 31;
+  --muted: 71 85 105;
+  --panel: 255 255 255;
+  --line: 226 232 240;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 6 10 18;
+  --foreground: 241 245 249;
+  --muted: 148 163 184;
+  --panel: 12 18 30;
+  --line: 31 41 55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 30% -10%, rgba(62, 247, 179, 0.18), transparent 30rem),
+    radial-gradient(circle at 90% 10%, rgba(46, 233, 225, 0.16), transparent 34rem),
+    rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+::selection {
+  background: rgba(62, 247, 179, 0.32);
+}
+
+.glass-panel {
+  border: 1px solid rgb(var(--line));
+  background: color-mix(in srgb, rgb(var(--panel)) 82%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.dark .glass-panel {
+  background: color-mix(in srgb, rgb(var(--panel)) 74%, transparent);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.grid-mask {
+  background-image:
+    linear-gradient(rgba(100, 116, 139, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.13) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.soft-border {
+  border-color: color-mix(in srgb, rgb(var(--line)) 78%, transparent);
+}
