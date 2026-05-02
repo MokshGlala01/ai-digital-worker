@@ -392,7 +392,7 @@ function WorkspaceView({
             </div>
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-700 dark:text-mint">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Backend online
+              Next.js backend online
             </span>
           </div>
 

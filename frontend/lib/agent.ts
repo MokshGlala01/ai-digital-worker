@@ -59,7 +59,12 @@ const fallbackSteps: AgentStep[] = [
 
 export async function runAgent(task: string): Promise<AgentResponse> {
   if (process.env.OPENAI_API_KEY) {
-    return runOpenAIAgent(task);
+    try {
+      return await runOpenAIAgent(task);
+    } catch (error) {
+      console.warn("OpenAI agent failed; falling back to mock agent.", error);
+      return runMockAgent(task);
+    }
   }
 
   return runMockAgent(task);

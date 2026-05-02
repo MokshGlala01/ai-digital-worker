@@ -23,7 +23,10 @@ export async function POST(request: Request) {
     const response = await runAgent(task);
     return NextResponse.json(response);
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unexpected server error.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("Agent route failed.", error);
+    return NextResponse.json(
+      { error: "The agent could not complete this task. Please try again." },
+      { status: 500 }
+    );
   }
 }
